@@ -28,10 +28,19 @@ const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
           <span class="text-blue-700">ADR 2030</span>
           <span class="hidden text-sm font-normal text-slate-400 sm:inline">{SITE.subtitle}</span>
         </a>
+        <nav class="hidden items-center gap-1 text-sm md:flex">
+          <a href="/take-action" class="rounded px-2 py-1 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Take Action</a>
+          <a href="/wins" class="rounded px-2 py-1 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Wins</a>
+          <a href="/tools" class="rounded px-2 py-1 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Tools</a>
+          <a href="/about" class="rounded px-2 py-1 text-slate-600 hover:bg-slate-100 hover:text-slate-900">About</a>
+        </nav>
         <div class="ml-auto flex flex-1 items-center justify-end gap-3">
           <div class="flex-1 sm:max-w-xs"><SearchBox client:load /></div>
           <a href="/dossier" class="whitespace-nowrap rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
-            My Dossier
+            Dossier
+          </a>
+          <a href="/donate" class="whitespace-nowrap rounded-md bg-green-600 px-3 py-2 text-sm font-medium text-white hover:bg-green-700">
+            Donate
           </a>
         </div>
       </div>
@@ -42,7 +51,17 @@ const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
     </main>
 
     <footer class="no-print border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-400">
-      {SITE.author} · {SITE.version}
+      <div class="mx-auto max-w-4xl space-y-1 px-4">
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/take-action" class="hover:text-slate-700">Take Action</a>
+          <a href="/wins" class="hover:text-slate-700">Wins</a>
+          <a href="/tools" class="hover:text-slate-700">Tools</a>
+          <a href="/about" class="hover:text-slate-700">About</a>
+          <a href="/donate" class="hover:text-slate-700">Donate</a>
+          <a href="/dossier" class="hover:text-slate-700">Dossier</a>
+        </div>
+        <div>{SITE.author} · {SITE.partners} · {SITE.version}</div>
+      </div>
     </footer>
   </body>
 </html>

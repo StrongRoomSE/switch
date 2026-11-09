@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import WeeklyAction from '../../components/tools/WeeklyAction.tsx';
+---
+
+<BaseLayout title="Weekly Action Calendar" description="52 small actions, one per week.">
+  <header class="mb-6">
+    <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">Tool</p>
+    <h1 class="mt-2 text-3xl font-bold text-slate-900">Weekly Action Calendar</h1>
+    <p class="mt-2 text-slate-600">
+      Fifty-two small, concrete actions — one per week. Start with this week, then browse the full list.
+    </p>
+  </header>
+
+  <WeeklyAction client:load />
+</BaseLayout>
