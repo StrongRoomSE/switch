@@ -95,7 +95,7 @@ export const TOC: TocEntry[] = [
   {
     number: 11,
     slug: 'legislative-framework',
-    title: 'PDPC Legislative Framework & PAC-Enabled Mandates',
+    title: 'BB2G Legislative Framework & PAC-Enabled Mandates',
     summary:
       'Describes the legislative framework and generates a formatted sample-bill template from your selections.',
     tool: 'bill-template-generator',
@@ -119,7 +119,7 @@ export const TOC: TocEntry[] = [
   {
     number: 14,
     slug: 'watchtower-deployment',
-    title: 'PDPC Watchtower Deployment Schedule and Global Expansion',
+    title: 'BB2G Watchtower Deployment Schedule and Global Expansion',
     summary:
       'Lays out the phased deployment schedule and expansion roadmap on an interactive timeline.',
     tool: 'deployment-timeline',

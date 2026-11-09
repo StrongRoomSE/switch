@@ -6,6 +6,7 @@ import ToolRenderer from '../../components/tools/ToolRenderer.tsx';
 import ResearchToolkit from '../../components/research/ResearchToolkit.tsx';
 import { neighbors } from '../../data/toc';
 import { toolData } from '../../data/tools';
+import { SITE } from '../../data/site';
 
 export async function getStaticPaths() {
   const sections = await getCollection('sections');
@@ -33,12 +34,32 @@ const toolPayload = tool?.dataKey ? toolData[tool.dataKey] : undefined;
         <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">Section {number}</p>
         <h1 class="mt-1 text-3xl font-bold text-slate-900">{title}</h1>
         <p class="mt-2 text-slate-500">{summary}</p>
-        <button
-          onclick="window.print()"
-          class="no-print mt-3 rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
-        >
-          Print this section
-        </button>
+        <p class="mt-1 text-xs text-slate-400">Last updated {SITE.lastUpdated}</p>
+
+        <div class="no-print mt-3 flex flex-wrap gap-2">
+          <button
+            onclick="window.print()"
+            class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >
+            Print this section
+          </button>
+          <button
+            data-share="x"
+            class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >Share on X</button>
+          <button
+            data-share="facebook"
+            class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >Share on Facebook</button>
+          <button
+            data-share="linkedin"
+            class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >Share on LinkedIn</button>
+          <button
+            data-share="email"
+            class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >Email</button>
+        </div>
       </header>
 
       <ResearchToolkit client:load slug={entry.data.slug} title={title} sectionNumber={number} />
@@ -102,4 +123,22 @@ const toolPayload = tool?.dataKey ? toolData[tool.dataKey] : undefined;
       </nav>
     </article>
   </div>
+
+  <script is:inline define:vars={{ shareTitle: title, shareSummary: summary }}>
+    document.querySelectorAll('[data-share]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const kind = btn.getAttribute('data-share');
+        const url = window.location.href;
+        const text = `${shareTitle} — ${shareSummary}`;
+        const u = encodeURIComponent(url);
+        const t = encodeURIComponent(text);
+        let href = '';
+        if (kind === 'x') href = `https://twitter.com/intent/tweet?url=${u}&text=${t}`;
+        else if (kind === 'facebook') href = `https://www.facebook.com/sharer/sharer.php?u=${u}`;
+        else if (kind === 'linkedin') href = `https://www.linkedin.com/sharing/share-offsite/?url=${u}`;
+        else if (kind === 'email') href = `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${t}%0A%0A${u}`;
+        if (href) window.open(href, '_blank', 'noopener,noreferrer');
+      });
+    });
+  </script>
 </BaseLayout>

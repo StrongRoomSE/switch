@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import { organizations } from '../../data/tools/organizations';
+
+const focusColor: Record<string, string> = {
+  'Child protection': 'bg-red-100 text-red-800',
+  'Family renewal': 'bg-green-100 text-green-800',
+  'Preparedness': 'bg-blue-100 text-blue-800',
+  'Education': 'bg-indigo-100 text-indigo-800',
+  'Policy': 'bg-amber-100 text-amber-800',
+  'Recovery': 'bg-purple-100 text-purple-800',
+  'Cyber': 'bg-cyan-100 text-cyan-800',
+};
+---
+
+<BaseLayout title="Organization Directory" description="Vetted organizations doing the work.">
+  <header class="mb-8">
+    <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">Tool</p>
+    <h1 class="mt-2 text-3xl font-bold text-slate-900">Organization Directory</h1>
+    <p class="mt-2 text-slate-600">
+      Organizations whose work overlaps this doctrine. Volunteer, donate, or learn.
+    </p>
+  </header>
+
+  <ul class="grid gap-4 sm:grid-cols-2">
+    {organizations.map((o) => (
+      <li class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center justify-between gap-2">
+          <h2 class="text-lg font-semibold text-slate-800">
+            <a href={o.url} target="_blank" rel="noopener noreferrer" class="hover:underline">{o.name} ↗</a>
+          </h2>
+          <span class={`rounded-full px-2.5 py-0.5 text-xs font-medium ${focusColor[o.focus] ?? 'bg-slate-100 text-slate-700'}`}>{o.focus}</span>
+        </div>
+        <p class="mt-2 text-sm text-slate-600">{o.blurb}</p>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

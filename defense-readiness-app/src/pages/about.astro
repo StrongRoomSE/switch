@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout title="About" description="About BB2G and The Shield Project.">
+  <header class="mb-10">
+    <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">About</p>
+    <h1 class="mt-2 text-4xl font-bold text-slate-900">BB2G · The Shield Project</h1>
+    <p class="mt-3 text-lg text-slate-600">
+      BB2G is the author of this doctrine, published as part of The Shield Project.
+    </p>
+  </header>
+
+  <section class="mb-10 rounded-xl border border-slate-200 bg-white p-6">
+    <h2 class="text-xl font-semibold text-slate-800">What this is</h2>
+    <p class="mt-3 text-slate-700">
+      {SITE.title} — {SITE.subtitle} — is a long-form strategic document that argues for a
+      coordinated, lawful response to the converging pressures of our time: the protection of
+      children, the renewal of families and communities, and the resilience of institutions
+      against modern threats.
+    </p>
+    <p class="mt-3 text-slate-700">
+      This site makes the doctrine <strong>usable</strong>: 17 sections, each paired with an
+      interactive tool, plus a research dossier, printable reports, and a growing set of
+      resources for people who want to act, not just read.
+    </p>
+  </section>
+
+  <section class="mb-10 rounded-xl border border-slate-200 bg-white p-6">
+    <h2 class="text-xl font-semibold text-slate-800">How we work</h2>
+    <ul class="mt-3 list-disc space-y-2 pl-5 text-slate-700">
+      <li>Everything proposed here is intended to operate <strong>within existing law</strong> and in cooperation with established authorities.</li>
+      <li>Nothing you do on this site is sent to a server. Bookmarks, notes, highlights, and tool inputs stay in your browser.</li>
+      <li>The content is updated over time. You can check the "Last updated" date at the top of each section.</li>
+      <li>The doctrine is a shared, public argument — we welcome examination, critique, and adaptation.</li>
+    </ul>
+  </section>
+
+  <section class="mb-10 rounded-xl border border-slate-200 bg-white p-6">
+    <h2 class="text-xl font-semibold text-slate-800">Get in touch</h2>
+    <p class="mt-3 text-slate-700">
+      For press, partnerships, or questions about this site, reach out through The Shield
+      Project. (Contact details will be added here.)
+    </p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <a href="/take-action" class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">Take action today</a>
+      <a href="/wins" class="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">See the wins</a>
+      <a href="/donate" class="rounded-md border border-green-600 px-4 py-2 text-sm font-medium text-green-700 hover:bg-green-50">Donate to BCF</a>
+    </div>
+  </section>
+</BaseLayout>

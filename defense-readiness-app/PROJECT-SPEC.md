@@ -46,8 +46,8 @@ Run: `npm install`, `npm run dev` (localhost:4321), `npm run build` (→ `./dist
 title:     "American Defense Readiness 2030"
 subtitle:  "Protect & Defend the Unwelcomed"
 tagline:   "A National Doctrine to Rescue, Restore, and Defend"
-author:    "Project Defend & Protect Our Children (PDPC)"
-partners:  "In partnership with America's Future and allied coalitions"
+author:    "BB2G"
+partners:  "Part of The Shield Project"
 version:   "Version 1.0 — Long-Form Strategic Edition"
 ```
 
@@ -71,10 +71,10 @@ tool. Section prose lives in `content/sections/NN-slug.mdx`; its frontmatter
 | 8 | national-rescue-operations | National Rescue Operations & Sanctuary Entry Protocol | protocol-stepper |
 | 9 | faith-family-renewal | Faith, Family, and Cultural Renewal Doctrine | pledge-commitment-tracker |
 | 10 | safe-usa-fund | SAFE-USA: Strategic Arsenal & Freedom Emergency Fund | fund-allocation-simulator |
-| 11 | legislative-framework | PDPC Legislative Framework & PAC-Enabled Mandates | bill-template-generator |
+| 11 | legislative-framework | BB2G Legislative Framework & PAC-Enabled Mandates | bill-template-generator |
 | 12 | psychological-warfare-reversal | Psychological Warfare Reversal Programs (De-hypnosis, Deprogramming) | deprogramming-pathway |
 | 13 | surveillance-detox | Strategic Intelligence Reclamation and Surveillance Detox | surveillance-detox-checklist |
-| 14 | watchtower-deployment | PDPC Watchtower Deployment Schedule and Global Expansion | deployment-timeline |
+| 14 | watchtower-deployment | BB2G Watchtower Deployment Schedule and Global Expansion | deployment-timeline |
 | 15 | restoration-metrics | National Restoration Metrics and Deterrence Benchmarks | metrics-dashboard |
 | 16 | conclusion-covenant | Conclusion: A New Covenant for a Protected Republic | covenant-builder |
 | 17 | appendices | Appendices: Threat Maps, Rescue Protocols, Sample Legislation | appendix-explorer |

@@ -77,11 +77,20 @@ export default function ThreatMap({ data, title }: ToolProps) {
           <div className="font-semibold text-slate-800">{selected.label}</div>
           <div className="text-slate-500">
             {selected.category} · severity {selected.severity}
+            {selected.updated && <> · updated {selected.updated}</>}
           </div>
           <p className="mt-1 text-slate-700">{selected.detail}</p>
+          {selected.solution && (
+            <p className="mt-2 rounded-md bg-green-50 p-2 text-green-900">
+              <strong>Solution:</strong> {selected.solution}
+            </p>
+          )}
         </div>
       ) : (
-        <p className="mt-3 text-sm text-slate-500">Select a marker for details. Toggle categories above to filter.</p>
+        <p className="mt-3 text-sm text-slate-500">Select a marker for details. Toggle categories above to filter. Each marker includes a <span className="font-medium text-green-700">solution</span>, not just a problem.</p>
+      )}
+      {map.lastUpdated && (
+        <p className="mt-2 text-xs text-slate-400">Threat data last updated {map.lastUpdated}.</p>
       )}
     </ToolShell>
   );

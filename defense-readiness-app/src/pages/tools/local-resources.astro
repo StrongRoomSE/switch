@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import LocalResources from '../../components/tools/LocalResources.tsx';
+---
+
+<BaseLayout title="Find Local Resources" description="National hotlines + state-specific resources.">
+  <header class="mb-8">
+    <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">Tool</p>
+    <h1 class="mt-2 text-3xl font-bold text-slate-900">Find Local Resources</h1>
+    <p class="mt-2 text-slate-600">
+      National hotlines are first. Pick your state to see any state-specific resources we've collected.
+    </p>
+    <p class="mt-2 text-sm text-slate-500">
+      If you or someone you know is in immediate danger, call <strong>911</strong>.
+    </p>
+  </header>
+
+  <LocalResources client:load />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import SocialSummaries from '../../components/tools/SocialSummaries.tsx';
+---
+
+<BaseLayout title="Per-Section Social Summary" description="One-line copy for every section.">
+  <header class="mb-8">
+    <p class="text-sm font-semibold uppercase tracking-wide text-blue-700">Tool</p>
+    <h1 class="mt-2 text-3xl font-bold text-slate-900">Per-Section Social Summary</h1>
+    <p class="mt-2 text-slate-600">
+      One-tap copy for every section — paste into X, LinkedIn, group chats, newsletters.
+    </p>
+  </header>
+
+  <SocialSummaries client:load />
+</BaseLayout>
